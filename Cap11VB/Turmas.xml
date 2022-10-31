@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Turmas xmlns="http://livroCSharp.pt">
+  <Turma>
+    <Id>1</Id>
+    <Designacao>
+      Turma1
+    </Designacao>
+    <Alunos>
+      <Aluno>
+        <Nome>Luis</Nome>
+        <Morada>
+          <CodigoPostal>9100 - Funchal</CodigoPostal>
+          <Rua>Rua Sao Pedro</Rua>
+        </Morada>
+      </Aluno>
+      <Aluno>
+        <Nome>Joana</Nome>
+        <Morada>
+          <CodigoPostal>1100 - Lisboa</CodigoPostal>
+          <Rua>Rua do Rossio</Rua>
+        </Morada>
+      </Aluno>
+      <Aluno>
+        <Nome>Rita</Nome>
+        <Morada>
+          <CodigoPostal>1100 - Lisboa</CodigoPostal>
+          <Rua>Rua do Rossio</Rua>
+        </Morada>
+      </Aluno>
+    </Alunos>
+  </Turma>
+</Turmas>

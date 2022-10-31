@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LINQToSQL.Manual.Contacto" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAEAFAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Manual\Contacto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQToSQL.Manual.Telefone" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manual\Contacto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQToSQL.Manual.Email" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manual\Contacto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQToSQL.Manual.Turma" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAIAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manual\Turma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQToSQL.Manual.CustomContext" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manual\CustomContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQToSQL.Manual.InfoEstudante">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAAA=</HashCode>
+      <FileName>Manual\CustomContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQToSQL.Manual.Disciplina" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manual\Disciplina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQToSQL.Manual.DisciplinasEstudantes" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAIABAAAAAAgACAAAAABAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Manual\DisciplinasEstudantes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQToSQL.Manual.Estudante">
+    <Position X="2" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAIIAAQAAAQAABAAAAAAAABAAEEAgAA=</HashCode>
+      <FileName>Manual\Estudante.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LINQToSQL.Manual.Morada" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAACIAAACAAAAABQAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Manual\Morada.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LINQToSQL.Manual.TipoContacto" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Manual\TipoContacto.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

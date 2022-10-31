@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Turmas" Class="TurmasDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\SQLExpress;Initial Catalog=Turmas;Integrated Security=True" SettingsObjectName="LINQToSQL.Properties.Settings" SettingsPropertyName="TurmasConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Contactos" Member="Contactos">
+    <Type Name="Contacto">
+      <Column Name="IdContacto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEstudante" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" IsDiscriminator="true" />
+      <Column Name="Valor" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Versao" Storage="_Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Estudante_Contacto" Member="Estudante" ThisKey="IdEstudante" OtherKey="IdEstudante" Type="Estudante" IsForeignKey="true" />
+      <Type Name="Telefone" IsInheritanceDefault="true" />
+      <Type Name="Email" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Turmas" Member="Turmas">
+    <Type Name="Turma">
+      <Column Name="IdTurma" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Designacao" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Versao" Storage="_Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Turma_Estudante" Member="Estudantes" ThisKey="IdTurma" OtherKey="IdTurma" Type="Estudante" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Disciplinas" Member="Disciplinas">
+    <Type Name="Disciplina">
+      <Column Name="IdDisciplina" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Designacao" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Versao" Storage="_Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Disciplina_DisciplinasEstudante" Member="DisciplinasEstudantes" ThisKey="IdDisciplina" OtherKey="IdDisciplina" Type="DisciplinasEstudante" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DisciplinasEstudantes" Member="DisciplinasEstudantes">
+    <Type Name="DisciplinasEstudante">
+      <Column Name="IdDisciplina" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdEstudante" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Disciplina_DisciplinasEstudante" Member="Disciplina" ThisKey="IdDisciplina" OtherKey="IdDisciplina" Type="Disciplina" IsForeignKey="true" />
+      <Association Name="Estudante_DisciplinasEstudante" Member="Estudante" ThisKey="IdEstudante" OtherKey="IdEstudante" Type="Estudante" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estudantes" Member="Estudantes">
+    <Type Name="Estudante">
+      <Column Name="IdEstudante" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IdTurma" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Versao" Storage="_Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Estudante_Contacto" Member="Contactos" ThisKey="IdEstudante" OtherKey="IdEstudante" Type="Contacto" />
+      <Association Name="Estudante_DisciplinasEstudante" Member="DisciplinasEstudantes" ThisKey="IdEstudante" OtherKey="IdEstudante" Type="DisciplinasEstudante" />
+      <Association Name="Estudante_Morada" Member="Moradas" ThisKey="IdEstudante" OtherKey="IdEstudante" Type="Morada" />
+      <Association Name="Turma_Estudante" Member="Turma" ThisKey="IdTurma" OtherKey="IdTurma" Type="Turma" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Moradas" Member="Moradas">
+    <Type Name="Morada">
+      <Column Name="IdMorada" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEstudante" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rua" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPostal" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Versao" Storage="_Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Association Name="Estudante_Morada" Member="Estudante" ThisKey="IdEstudante" OtherKey="IdEstudante" Type="Estudante" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.ObtemContactos" Method="ObtemContactos">
+    <ElementType Name="ObtemContactosResult">
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ObtemContactosDoEstudante" Method="ObtemContactosDoEstudante">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ObtemContactosDoEstudanteResult">
+      <Column Name="nome" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="valor" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
